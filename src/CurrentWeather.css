@@ -1,0 +1,27 @@
+h1 {
+  font-size: 30px;
+}
+
+h1,
+.currentTemp,
+.currentDayData {
+  font-family: "Nanum Gothic Coding", monospace;
+  color: #2f2e41;
+}
+
+.currentTemp {
+  font-size: 25px;
+}
+
+.celciusFah {
+  font-size: 15px;
+}
+
+.currentDay {
+  margin: 20px auto 10px;
+}
+
+.currentDayData {
+  font-size: 16px;
+  text-align: left;
+}

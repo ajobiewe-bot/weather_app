@@ -1,38 +1,91 @@
-.App {
+body {
+  background-image: url(https://images.pexels.com/photos/1415734/pexels-photo-1415734.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-size: cover;
+}
+
+footer {
+  font-size: 15px;
+  text-align: right;
+}
+
+header,
+footer {
+  font-family: "Architects Daughter", cursive;
+  color: #59641a;
+}
+
+form {
+  text-align: right;
+  padding: 10px;
+  margin: 5px auto 20px auto;
+  font-size: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  max-width: 50%;
+}
+
+.nextDays {
   text-align: center;
+  font-family: "Nanum Gothic Coding", monospace;
+  margin: 5px auto 25px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.weatherEmogi {
+  font-size: 35px;
+  text-align: center;
+  color: #c3250a;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.searchCurrentLocation {
+  display: block;
+  padding: 5px;
+  margin-top: 13px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.searchCity,
+.searchCurrentLocation {
+  background-color: rgba(255, 216, 116, 0.7);
+  border: 2px solid #59641a;
+  border-radius: 3px;
+  color: #2f2e41;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+.searchCity:hover,
+.searchCurrentLocation:hover {
+  background-color: #2f2e41;
+  border: 2px solid rgba(255, 216, 116, 0.7);
+  color: rgba(255, 216, 116, 0.7);
+  transition: all 200ms ease-in-out;
+  box-shadow: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.boxShadow {
+  display: block;
+  max-width: 800px;
+  background: rgba(241, 242, 244, 0.85);
+  border-radius: 15px;
+  border: 2px solid #59641a;
+  margin: 3% auto;
+  box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.4);
+}
+
+.boxes {
+  background-color: rgba(191, 190, 204, 0.4);
+  margin: 0 10px;
+  padding: 0;
+  border-radius: 6px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  border: 2px solid #59641a;
+}
+
+.inputCity {
+  border: 2px solid #6a5a42;
+  background-color: rgba(255, 216, 116, 0.7);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
