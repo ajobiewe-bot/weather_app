@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+
+import LastUpdate from "./LastUpdate";
 import "./CurrentWeather.css";
 
 export default function CurrentWeather() {
+  //State and function to update Defaul City Weather info
   const [weatherData, setWeatherData] = useState({ ready: false });
-
   function handleResponse(response) {
     setWeatherData({
       ready: true,
@@ -13,9 +15,10 @@ export default function CurrentWeather() {
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
+      date: new Date(response.data.dt * 1000),
     });
   }
-
+  //JSX for current day weather
   if (weatherData.ready) {
     return (
       <div className="CurrentWeather">
@@ -57,7 +60,7 @@ export default function CurrentWeather() {
                 </li>
                 <li>
                   Last update:
-                  <span>5:39pm</span>
+                  <LastUpdate date={weatherData.date} />
                 </li>
               </ul>
             </div>
@@ -69,6 +72,6 @@ export default function CurrentWeather() {
     let apiKey = "7682c2be43d876a63c355131eaac1953";
     let defaultCityApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Lisbon&appid=${apiKey}&units=metric`;
     axios.get(defaultCityApiUrl).then(handleResponse);
-    return "Loading...";
+    return "Loading";
   }
 }

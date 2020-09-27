@@ -1,8 +1,7 @@
 import React from "react";
-import "./Header.css";
 
-export default function Header() {
-  let now = new Date();
+export default function LastUpdate(props) {
+  console.log(props);
   let days = [
     "Sunday",
     "Monday",
@@ -12,9 +11,10 @@ export default function Header() {
     "Friday",
     "Saturday",
   ];
-  let currentDay = days[now.getDay()];
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
+
+  let day = days[props.date.getDay()];
+  let hours = props.date.getHours();
+  let minutes = props.date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
@@ -25,9 +25,8 @@ export default function Header() {
   }
 
   return (
-    <header>
-      {currentDay}, {hours[0]}:{minutes}
-      {hours[1]}
-    </header>
+    <span>
+      {day}, {hours[0]}:{minutes} {hours[1]}
+    </span>
   );
 }
