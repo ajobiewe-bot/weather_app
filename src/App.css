@@ -35,11 +35,7 @@ input {
   margin: 5px auto 25px;
 }
 
-.weatherEmogi {
-  font-size: 35px;
-  text-align: center;
-  color: #c3250a;
-}
+
 
 .searchCurrentLocation {
   display: block;

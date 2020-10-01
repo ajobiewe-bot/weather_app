@@ -8,7 +8,6 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
-    "font-awesome": "^4.7.0",
     "get-google-fonts": "^1.2.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

@@ -1,6 +1,7 @@
 import React from "react";
 
 import LastUpdate from "./LastUpdate";
+import WeatherIcon from "./WeatherIcon";
 import "./CurrentWeather.css";
 
 export default function CurrentWeather(props) {
@@ -10,7 +11,7 @@ export default function CurrentWeather(props) {
       <div className="row">
         <div className="col-5">
           <span className="currentweatherEmogi">
-            <i className="fas fa-cloud-sun-rain"></i>
+            <WeatherIcon code={props.data.icon} />
           </span>
         </div>
         <div className="col-6">

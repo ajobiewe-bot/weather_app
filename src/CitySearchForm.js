@@ -16,6 +16,7 @@ export default function CitySearchForm(props) {
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
+      icon: response.data.weather[0].id,
       date: new Date(response.data.dt * 1000),
     });
   }
@@ -60,7 +61,6 @@ export default function CitySearchForm(props) {
             </div>
           </div>
         </div>
-        ;;
       </div>
     );
   } else {
