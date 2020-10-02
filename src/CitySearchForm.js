@@ -8,6 +8,9 @@ export default function CitySearchForm(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState("Lisbon");
 
+  function errorAlert() {
+    alert("🐱‍👤 Is that city located on Planet Earth? 🌍");
+  }
   function handleResponse(response) {
     setWeatherData({
       ready: true,
@@ -24,12 +27,23 @@ export default function CitySearchForm(props) {
   function search() {
     const apiKey = "7682c2be43d876a63c355131eaac1953";
     let cityApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(cityApiUrl).then(handleResponse);
+    axios.get(cityApiUrl).then(handleResponse, errorAlert);
+  }
+
+  function searchCurrentCoordinates(position) {
+    const apiKey = "7682c2be43d876a63c355131eaac1953";
+    let updatedApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+    axios.get(updatedApiUrl).then(handleResponse, errorAlert);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
     search();
+  }
+
+  function searchCurrentLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(searchCurrentCoordinates);
   }
 
   function handleCityChange(event) {
@@ -55,7 +69,11 @@ export default function CitySearchForm(props) {
               </form>
             </div>
             <div className="col-4">
-              <button type="button" className="searchCurrentLocation">
+              <button
+                type="button"
+                onClick={searchCurrentLocation}
+                className="searchCurrentLocation"
+              >
                 Current Location
               </button>
             </div>
