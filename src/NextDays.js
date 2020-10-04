@@ -1,5 +1,7 @@
 import React from "react";
+
 import WeatherIcon from "./WeatherIcon";
+
 
 export default function NextDays(props) {
   //code to transform next days into text
@@ -31,7 +33,10 @@ export default function NextDays(props) {
         {Math.round(props.data[props.index].temp.max)} /{" "}
         {Math.round(props.data[props.index].temp.min)} ºC
       </p>
-      <WeatherIcon code={props.data[props.index].weather[0].id} />
+      <WeatherIcon
+        code={props.data[props.index].weather[0].id}
+        
+      />
     </div>
   );
 }

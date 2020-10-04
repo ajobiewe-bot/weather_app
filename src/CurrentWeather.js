@@ -4,27 +4,24 @@ import LastUpdate from "./LastUpdate";
 import WeatherIcon from "./WeatherIcon";
 import CurrentWeatherTemperature from "./CurrentWeatherTemperature";
 import "./CurrentWeather.css";
+import "./WeatherIcon.css";
 
 export default function CurrentWeather(props) {
   //JSX for current day weather
   return (
     <div className="CurrentWeather">
       <div className="row">
-        <div className="col-5">
-          <span className="currentweatherEmogi">
+        <div className="col-3 topLeftInfo">
+          <span>
             <WeatherIcon code={props.data.icon} />
           </span>
         </div>
-        <div className="col-6">
+        <div className="col-4 topLeftInfo">
           <h1>{props.data.city}</h1>
-          
           <CurrentWeatherTemperature celsius={props.data.temperature} />
         </div>
-      </div>
-      <span className="currentDay">
-        <div className="row ">
-          <div className="col-3"></div>
-          <div className="col-9">
+        <span className="currentDay">
+          <div className="col">
             <ul className="currentDayData">
               <li className="weatherDescription text-capitalize">
                 {props.data.description}
@@ -44,8 +41,8 @@ export default function CurrentWeather(props) {
               </li>
             </ul>
           </div>
-        </div>
-      </span>
+        </span>
+      </div>
     </div>
   );
 }

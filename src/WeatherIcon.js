@@ -9,7 +9,7 @@ import {
   faSnowflake,
   faSmog,
 } from "@fortawesome/free-solid-svg-icons";
-import "./WeatherIcon.css";
+
 
 export default function WeatherIcon(props) {
   const iconsLib = [
@@ -47,7 +47,7 @@ export default function WeatherIcon(props) {
   let index;
   if (props.code === "800") {
     return (
-      <div className="WeatherIcon">
+      <div className="Emoji">
         <FontAwesomeIcon icon={faSun} />
       </div>
     );
@@ -57,9 +57,10 @@ export default function WeatherIcon(props) {
   for (index = 1; index < 7; index++) {
     if (iconsLib[index].iconName === newVar) {
       return (
-          <div className="WeatherIcon">
+        <div className="Emoji">
           <FontAwesomeIcon icon={iconsLib[index].class} />
-          </div>);
+        </div>
+      );
       }
     }
 }

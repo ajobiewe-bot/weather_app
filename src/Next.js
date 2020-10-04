@@ -30,7 +30,7 @@ export default function Next(props) {
       </div>
     );
   } else {
-    const apiKey = "7682c2be43d876a63c355131eaac1953";
+    const apiKey = "ad04b7a362cea2ed31488d67c6adbf93";
     let forecastApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.latitude}&lon=${props.longitude}&exclude=minutely,hourly,current&appid=${apiKey}&units=metric`;
     axios.get(forecastApiUrl).then(getForecast);
     return "Loading...";

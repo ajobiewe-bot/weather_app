@@ -1,12 +1,13 @@
 h1 {
   font-size: 30px;
+  text-align: left;
 }
 
 h1,
 .currentTemp,
 .currentDayData {
   font-family: "Nanum Gothic Coding", monospace;
-  color: #2f2e41;
+  color: black;
 }
 
 .currentTemp {
@@ -24,4 +25,11 @@ h1,
 .currentDayData {
   font-size: 16px;
   text-align: left;
+  margin: 0;
+  padding: 0 0 20px 0;
+}
+
+.topLeftInfo {
+  margin: 40px 0 0 0;
+  padding: 0 0 20px 0;
 }

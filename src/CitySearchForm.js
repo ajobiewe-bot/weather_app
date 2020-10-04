@@ -28,13 +28,13 @@ export default function CitySearchForm(props) {
   }
 
   function search() {
-    const apiKey = "7682c2be43d876a63c355131eaac1953";
+    const apiKey = "ad04b7a362cea2ed31488d67c6adbf93";
     let cityApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(cityApiUrl).then(handleResponse, errorAlert);
   }
 
   function searchCurrentCoordinates(position) {
-    const apiKey = "7682c2be43d876a63c355131eaac1953";
+    const apiKey = "ad04b7a362cea2ed31488d67c6adbf93";
     let updatedApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
     axios.get(updatedApiUrl).then(handleResponse, errorAlert);
   }
