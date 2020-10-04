@@ -10,7 +10,6 @@ import {
   faSmog,
 } from "@fortawesome/free-solid-svg-icons";
 
-
 export default function WeatherIcon(props) {
   const iconsLib = [
     {
@@ -45,7 +44,7 @@ export default function WeatherIcon(props) {
 
   let newVar = props.code.toString();
   let index;
-  if (props.code === "800") {
+  if (props.code == "800") {
     return (
       <div className="Emoji">
         <FontAwesomeIcon icon={faSun} />
@@ -53,17 +52,14 @@ export default function WeatherIcon(props) {
     );
   } else {
     newVar = newVar.charAt(0);
-  }
-  for (index = 1; index < 7; index++) {
-    if (iconsLib[index].iconName === newVar) {
-      return (
-        <div className="Emoji">
-          <FontAwesomeIcon icon={iconsLib[index].class} />
-        </div>
-      );
+    for (index = 1; index < 7; index++) {
+      if (iconsLib[index].iconName === newVar) {
+        return (
+          <div className="Emoji">
+            <FontAwesomeIcon icon={iconsLib[index].class} />
+          </div>
+        );
       }
     }
+  }
 }
-    
-  
-
