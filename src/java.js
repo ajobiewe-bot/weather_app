@@ -11,18 +11,6 @@ function toAmPm() {
   }
 }
 
-//Function to update next days according current one
-function nextDays() {
-  for (let i = 1; i < 6; i++) {
-    let nextDayIndex = now.getDay() + i;
-    if (nextDayIndex > 6) {
-      nextDayIndex = now.getDay() + i - 7;
-    }
-    let nextDay = days[nextDayIndex];
-    document.querySelector(`#day-${i}`).innerHTML = `${nextDay}`;
-  }
-}
-
 //Function to transform time (formating)
 function transformTime(timeStamp) {
   let date = new Date(timeStamp);
@@ -68,19 +56,6 @@ function getCoordinates(result) {
   axios.get(forecastApiUrl).then(getForecast);
 }
 
-//Functions to get city data according current location
-function coordUpdateCity(position) {
-  let updatedApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-  axios.get(updatedApiUrl).then(updateCity);
-}
-
-function getPosition() {
-  navigator.geolocation.getCurrentPosition(coordUpdateCity);
-}
-
-//Code to update next days according to current one
-nextDays();
-
 //Code to update data on webpage according city user input
 
 let apiKey = "7682c2be43d876a63c355131eaac1953";
@@ -88,10 +63,3 @@ let defaultCityApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Lisbo
 
 axios.get(defaultCityApiUrl).then(updateCity);
 
-// Code to get data for city according user input
-let form = document.querySelector("#city-search-form");
-form.addEventListener("submit", searchCity);
-
-// Code to get data of current Location
-let button = document.querySelector("button");
-button.addEventListener("click", getPosition);

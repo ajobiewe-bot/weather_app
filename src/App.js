@@ -5,7 +5,7 @@ import ImportLinks from "./ImportLinks";
 import Header from "./Header";
 
 import CitySearchForm from "./CitySearchForm";
-import Next from "./Next";
+
 import Footer from "./Footer";
 
 import "./App.css";
@@ -18,7 +18,6 @@ function App() {
         <div className="container">
           <Header />
           <CitySearchForm />
-          <Next />
           <Footer />
         </div>
       </span>

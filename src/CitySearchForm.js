@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import CurrentWeather from "./CurrentWeather";
+import Next from "./Next";
 
 export default function CitySearchForm(props) {
   //State and function to update Defaul City Weather info
@@ -21,6 +22,8 @@ export default function CitySearchForm(props) {
       wind: response.data.wind.speed,
       icon: response.data.weather[0].id,
       date: new Date(response.data.dt * 1000),
+      lat: response.data.coord.lat,
+      long: response.data.coord.lon,
     });
   }
 
@@ -79,6 +82,7 @@ export default function CitySearchForm(props) {
             </div>
           </div>
         </div>
+        <Next longitude={weatherData.long} latitude={weatherData.lat} />
       </div>
     );
   } else {
