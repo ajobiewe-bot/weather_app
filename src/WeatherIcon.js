@@ -44,6 +44,7 @@ export default function WeatherIcon(props) {
 
   let newVar = props.code.toString();
   let index;
+  // eslint-disable-next-line
   if (props.code == "800") {
     return (
       <div className="Emoji">
